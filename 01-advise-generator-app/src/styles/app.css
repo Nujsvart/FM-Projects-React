@@ -1,0 +1,44 @@
+.container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
+  max-width: 30rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: hsl(217, 19%, 24%);
+  position: relative;
+}
+
+.adviceNumber {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: hsl(150, 100%, 66%);
+}
+
+.advice {
+  color: hsl(193, 38%, 86%);
+  font-weight: 800;
+  font-size: 28px;
+}
+
+button {
+  position: absolute;
+  bottom: -2rem;
+  left: 46%;
+  padding: 1rem;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: hsl(150, 100%, 66%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+button:hover {
+  box-shadow: 1px 1px 40px hsla(150, 100%, 66%, 0.521);
+}
