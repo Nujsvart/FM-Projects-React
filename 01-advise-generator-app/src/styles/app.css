@@ -1,35 +1,54 @@
 .container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   height: 20rem;
-  max-width: 30rem;
+  width: 30rem;
   padding: 1rem 2rem;
   text-align: center;
   background-color: hsl(217, 19%, 24%);
   position: relative;
+  border-radius: 1rem;
+  box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.07);
 }
 
 .adviceNumber {
-  margin: 0;
+  margin: 1rem 0;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.6rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: hsl(150, 100%, 66%);
 }
 
+h2 {
+  margin: 0;
+}
+
 .advice {
   color: hsl(193, 38%, 86%);
   font-weight: 800;
-  font-size: 28px;
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  position: absolute;
+  bottom: 4rem;
+}
+
+.desktopSvg {
+  display: block;
+}
+
+.mobileSvg {
+  display: none;
 }
 
 button {
   position: absolute;
   bottom: -2rem;
-  left: 46%;
+  left: 45%;
   padding: 1rem;
   border-radius: 50%;
   outline: none;
@@ -41,4 +60,16 @@ button {
 
 button:hover {
   box-shadow: 1px 1px 40px hsla(150, 100%, 66%, 0.521);
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    width: 80%;
+  }
+  .desktopSvg {
+    display: none;
+  }
+  .mobileSvg {
+    display: block;
+  }
 }

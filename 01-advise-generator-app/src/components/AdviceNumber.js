@@ -2,8 +2,8 @@ import React from "react";
 
 const AdviceNumber = ({ quoteId }) => {
   return (
-    <header>
-      <h2 className="adviceNumber">Advice #{quoteId}</h2>
+    <header className="adviceNumber">
+      <h2>Advice #{quoteId}</h2>
     </header>
   );
 };
