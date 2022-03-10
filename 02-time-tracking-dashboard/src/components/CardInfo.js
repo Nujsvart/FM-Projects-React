@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import CardInfoTotal from "./CardInfoTotal";
+import ElipsisButton from "./ElipsisButton";
 
-const CardInfo = ({ info }) => {
-  console.log(info);
+const CardInfo = ({ info, showPage }) => {
+  const { daily, weekly, monthly } = info.timeframes;
+
+  const [time, setTime] = useState({ x: "", y: "" });
+
+  useEffect(() => {
+    showPage === "daily" && setTime({ x: daily, y: "day" });
+    showPage === "weekly" && setTime({ x: weekly, y: "week" });
+    showPage === "monthly" && setTime({ x: monthly, y: "month" });
+  }, [daily, weekly, monthly, showPage]);
+
   return (
     <div className="card_info">
       <div className="card_title">
         <p>{info.title}</p>
-        <button className="elipsis">
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-              fill="#BBC0FF"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
+        <ElipsisButton />
       </div>
-      <p className="current">{info.timeframes.weekly.current}hrs</p>
-      <p className="previous">
-        Last week - {info.timeframes.weekly.previous}hrs
-      </p>
+      <CardInfoTotal times={time.x} lastTime={time.y} />
     </div>
   );
 };

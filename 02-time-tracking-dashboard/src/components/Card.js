@@ -26,11 +26,11 @@ const getImg = src => {
   }
 };
 
-const Card = ({ data }) => {
+const Card = ({ data, showPage }) => {
   return (
     <div className={`card ${data.title}`}>
       <img src={getImg(data.title)} alt={data.title} />
-      <CardInfo info={data} />
+      <CardInfo info={data} showPage={showPage} />
     </div>
   );
 };
