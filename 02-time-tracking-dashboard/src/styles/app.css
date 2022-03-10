@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --bg-color: hsl(226, 43%, 10%);
+  --text-color: #dcdde0;
+  --profile-blue: hsl(246, 80%, 60%);
+  --card-blue: hsl(235, 46%, 20%);
+  --card-hoverBlue: hsl(247, 37%, 33%);
+  --desa-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  z-index: 5;
+}
+
+.navBar {
+  grid-area: 1 / 1 / 6 / 2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-blue);
+  border-radius: 0.6rem;
+  width: 200px;
+  color: var(--pale-blue);
+}
+
+.navBar_profile {
+  background-color: var(--profile-blue);
+  height: 70%;
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+}
+
+.profilePic {
+  width: 64px;
+  margin-bottom: 2rem;
+}
+
+.profilePic img {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.subtitle {
+  font-size: .8rem;
+  color: var(--desa-blue);
+}
+
+.userName {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.navBar_links {
+  padding: 1rem;
+}
+
+.card {
+  background-color: hsl(43, 84%, 65%);
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0.6rem;
+  max-width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  position: absolute;
+  width: 50px;
+  top: -0.2rem;
+  right: 1rem;
+}
+
+.card_info {
+  background-color: var(--card-blue);
+  padding: 1rem;
+  height: 80%;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card_info:hover {
+  background-color: var(--card-hoverBlue);
+}
+
+.card_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.current {
+  font-size: 2.3rem;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+
+.previous {
+  font-size: 0.8rem;
+}
+
+.Work {
+  background-color: hsl(15, 100%, 70%);
+}
+
+.Play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+.Study {
+  background-color: hsl(348, 100%, 68%);
+}
+
+.Exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+
+.Social {
+  background-color: hsl(264, 64%, 52%);
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
