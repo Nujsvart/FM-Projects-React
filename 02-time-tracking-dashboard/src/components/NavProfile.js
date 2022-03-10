@@ -8,7 +8,7 @@ const NavProfile = () => {
         <img src={ProfilePic} alt="Jeremy" />
       </div>
       <div>
-        <span className="subtitle">Report for</span>
+        <span className="subtitle">Reports for</span>
         <p className="userName">Jeremy Robson</p>
       </div>
     </div>

@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 
 const CardInfoTotal = ({ times, lastTime }) => {
   return (
-    <>
+    <div className="total">
       <CountUp
         start={0}
         end={times.current}
@@ -17,7 +17,7 @@ const CardInfoTotal = ({ times, lastTime }) => {
       <p className="previous">
         {`Last ${lastTime}`} - {times.previous}hrs
       </p>
-    </>
+    </div>
   );
 };
 

@@ -45,17 +45,29 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
   z-index: 5;
+  gap: 1rem;
 }
 
 .navBar {
-  grid-area: 1 / 1 / 6 / 2;
+  grid-area: 1 / 1 / 3 / 2;
   display: flex;
   flex-direction: column;
   background-color: var(--card-blue);
   border-radius: 0.6rem;
   width: 200px;
+  color: var(--pale-blue);
+  box-shadow: rgba(0, 0, 0, 0.411) 0px 7px 10px 0px;
+}
+
+.navBar_links button {
+  font-family: inherit;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  color: var(--desa-blue);
+}
+
+.navBar_links button:hover {
   color: var(--pale-blue);
 }
 
@@ -77,8 +89,9 @@ body {
 }
 
 .subtitle {
-  font-size: .8rem;
-  color: var(--desa-blue);
+  font-size: 0.8rem;
+  color: var(--pale-blue);
+  opacity: 0.7;
 }
 
 .userName {
@@ -99,22 +112,24 @@ body {
   border-radius: 0.6rem;
   max-width: 200px;
   position: relative;
-  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.411) 0px 7px 10px 0px;
 }
 
-.card img {
-  position: absolute;
+.card-image {
+  display: flex;
+  align-self: flex-end;
+  overflow: hidden;
+  position: relative;
   width: 50px;
-  top: -0.2rem;
-  right: 1rem;
+  height: 50px;
+  margin: 0 1rem 0 0;
 }
 
 .card_info {
   background-color: var(--card-blue);
   padding: 1rem;
-  height: 80%;
-  border-radius: 0.6rem;
-  cursor: pointer;
+  height: 95%;
+  border-radius: 0.7rem 0.7rem 0.5rem 0.5rem;
   z-index: 10;
 }
 
@@ -160,9 +175,46 @@ body {
   background-color: hsl(264, 64%, 52%);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  html {
+    font-size: 0.7rem;
+  }
+
   .container {
+    grid-template-columns: 1fr;
+    padding: 4rem 0;
+  }
+
+  .navBar_profile {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navBar_links > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navBar_profile .userName {
+    font-size: 1rem;
+  }
+
+  .navBar_links > ul > li {
+    padding: 0;
+  }
+
+  .navBar_profile > .profilePic {
+    width: 50px;
+    margin-bottom: 0;
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
