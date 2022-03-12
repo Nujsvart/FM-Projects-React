@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  background-image: url("../assets/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #151a22;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input {
+  padding: 1.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: inherit;
+}
+
+h1 {
+  letter-spacing: 0.4em;
+}
+
+.app {
+  width: 30rem;
+}
+
+.header {
+  margin: 4rem 0;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoInput {
+  margin-bottom: 2rem;
+}
+
+.todoContainer {
+  border-radius: 3px;
+  background-color: azure;
+}
+
+.todo {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid grey;
+}
+
+.todoFooter {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
