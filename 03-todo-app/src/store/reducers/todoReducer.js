@@ -13,6 +13,15 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         { id: nextId(state), text: action.payload, completed: false },
       ];
+
+    case actionTypes.REMOVE_TODO:
+      return state.filter(item => item.id !== action.payload);
+
+    case actionTypes.COMPLETE_TODO:
+      return state.map(item => {
+        if (item.id !== action.payload) return item;
+        return { ...item, completed: !item.completed };
+      });
     default:
       return state;
   }

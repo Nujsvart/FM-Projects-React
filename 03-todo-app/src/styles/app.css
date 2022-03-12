@@ -83,3 +83,7 @@ h1 {
   display: flex;
   gap: 1rem;
 }
+
+.completedTodo {
+  background-color: red;
+}

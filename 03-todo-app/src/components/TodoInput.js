@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import * as actionTypes from "../store/actions/actionTypes";
+
 import { useDispatch } from "react-redux";
+import { addTodo } from "../store/actions/todoActions";
 
 const TodoInput = () => {
   const [text, setText] = useState("");
@@ -9,11 +10,8 @@ const TodoInput = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const textTrim = text.trim();
-
-    textTrim && dispatch({ type: actionTypes.ADD_TODO, payload: textTrim });
-
+    textTrim && dispatch(addTodo(textTrim));
     setText("");
   };
 

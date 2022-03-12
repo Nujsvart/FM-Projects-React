@@ -13,3 +13,10 @@ export const removeTodo = id => {
     payload: id,
   };
 };
+
+export const completeTodo = id => {
+  return {
+    type: actionTypes.COMPLETE_TODO,
+    payload: id,
+  };
+};
