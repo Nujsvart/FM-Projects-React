@@ -11,7 +11,7 @@ body {
   background-image: url("../assets/bg-desktop-dark.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: #151a22;
+  background-color: hsl(235, 21%, 11%);
   display: grid;
   place-items: center;
   font-size: 18px;
@@ -28,19 +28,22 @@ button {
   outline: none;
   cursor: pointer;
   background-color: transparent;
+  color: hsl(234, 11%, 52%);
 }
 
 input {
-  padding: 1.5rem;
   width: 100%;
   border: none;
   outline: none;
   border-radius: 3px;
   font-size: inherit;
+  background-color: transparent;
+  color: hsl(234, 39%, 85%);
 }
 
 h1 {
   letter-spacing: 0.4em;
+  color: hsl(234, 39%, 85%);
 }
 
 .app {
@@ -58,25 +61,40 @@ h1 {
 }
 
 .todoInput {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
   margin-bottom: 2rem;
+  background-color: hsl(235, 24%, 19%);
+}
+
+.todoInput button {
+  cursor: initial;
 }
 
 .todoContainer {
   border-radius: 3px;
-  background-color: azure;
+  background-color: hsl(235, 24%, 19%);
 }
 
 .todo {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+  color: hsl(234, 39%, 85%);
+}
+
+.todo:hover {
+  color: hsl(236, 33%, 92%);
 }
 
 .todoFooter {
   display: flex;
   padding: 1.5rem;
   justify-content: space-between;
+  color: hsl(234, 11%, 52%);
 }
 
 .buttons {
@@ -85,5 +103,28 @@ h1 {
 }
 
 .completedTodo {
-  background-color: red;
+  text-decoration: line-through;
+  color: hsl(237, 14%, 26%);
+}
+
+.activeFilter {
+  color: hsl(220, 98%, 61%);
+}
+
+.checkBtn {
+  border: 1px solid hsl(237, 14%, 26%);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.checkBtn img {
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+}
+
+.completedIcon {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }

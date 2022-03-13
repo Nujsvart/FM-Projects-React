@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 import { useDispatch } from "react-redux";
 import { addTodo } from "../store/actions/todoActions";
@@ -17,6 +18,7 @@ const TodoInput = () => {
 
   return (
     <div className="todoInput">
+      <Button className="checkBtn" />
       <form onSubmit={handleSubmit}>
         <input
           value={text}

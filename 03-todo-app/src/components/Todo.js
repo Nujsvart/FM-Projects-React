@@ -1,13 +1,12 @@
 import React from "react";
+import CheckButton from "./CheckButton";
 
-import { useSelector, useDispatch } from "react-redux";
-import { completeTodo, removeTodo } from "../store/actions/todoActions";
+import { useSelector } from "react-redux";
 import { showFilteredTodos } from "../store/reducers/filterReducer";
 
 const Todo = () => {
   const todos = useSelector(state => state.todos);
   const activeFilter = useSelector(state => state.filtered);
-  const dispatch = useDispatch();
 
   const filteredTodos = showFilteredTodos(todos, activeFilter);
 
@@ -15,17 +14,11 @@ const Todo = () => {
     <ul>
       {filteredTodos.map(item => {
         return (
-          <li
-            className={`todo ${item.completed && "completedTodo"}`}
-            key={item.id}
-          >
-            <button
-              onClick={() => dispatch(removeTodo(item.id))}
-              className="checkIcon"
-            >
-              icon
-            </button>
-            <p onClick={() => dispatch(completeTodo(item.id))}>{item.text}</p>
+          <li className="todo" key={item.id}>
+            <CheckButton todo={item} />
+            <p className={`${item.completed && "completedTodo"}`}>
+              {item.text}
+            </p>
           </li>
         );
       })}
