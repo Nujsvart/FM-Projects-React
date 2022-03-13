@@ -1,5 +1,6 @@
 import React from "react";
 import CheckButton from "./CheckButton";
+import DeleteButton from "./DeleteButton";
 
 import { useSelector } from "react-redux";
 import { showFilteredTodos } from "../store/reducers/filterReducer";
@@ -19,6 +20,7 @@ const Todo = () => {
             <p className={`${item.completed && "completedTodo"}`}>
               {item.text}
             </p>
+            <DeleteButton todoId={item.id} />
           </li>
         );
       })}

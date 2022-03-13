@@ -80,6 +80,7 @@ h1 {
 
 .todo {
   display: flex;
+  align-items: center;
   gap: 1rem;
   padding: 1.5rem;
   border-bottom: 1px solid hsl(237, 14%, 26%);
@@ -123,6 +124,10 @@ h1 {
   position: absolute;
   left: 4px;
   bottom: 5px;
+}
+
+.deleteBtn {
+  margin-left: auto;
 }
 
 .completedIcon {
