@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 import SunIcon from "../assets/icon-sun.svg";
 
 const Header = () => {
@@ -7,9 +8,9 @@ const Header = () => {
       <div className="titleContainer">
         <h1>TODO</h1>
         <div className="themeIcon">
-          <button className="themeBtn">
+          <Button className="themeBtn">
             <img src={SunIcon} alt="icon" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

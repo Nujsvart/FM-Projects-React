@@ -1,6 +1,6 @@
 import { SET_FILTER } from "../actions/actionTypes";
 
-const filterReducer = (state = "ALL", action) => {
+const filterReducer = (state = "All", action) => {
   switch (action.type) {
     case SET_FILTER:
       return action.payload.filter;
@@ -11,11 +11,11 @@ const filterReducer = (state = "ALL", action) => {
 
 export const showFilteredTodos = (todos, filter) => {
   switch (filter) {
-    case "ALL":
+    case "All":
       return todos;
-    case "ACTIVE":
+    case "Active":
       return todos.filter(todo => !todo.completed);
-    case "COMPLETED":
+    case "Completed":
       return todos.filter(todo => todo.completed);
     default:
       return todos;
