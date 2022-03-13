@@ -12,19 +12,19 @@ const Todo = () => {
   const filteredTodos = showFilteredTodos(todos, activeFilter);
 
   return (
-    <ul>
+    <>
       {filteredTodos.map(item => {
         return (
-          <li className="todo" key={item.id}>
+          <div className="todo" key={item.id}>
             <CheckButton todo={item} />
             <p className={`${item.completed && "completedTodo"}`}>
               {item.text}
             </p>
             <DeleteButton todoId={item.id} />
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </>
   );
 };
 

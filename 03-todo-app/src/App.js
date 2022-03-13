@@ -15,6 +15,7 @@ const App = () => {
       <Header />
       <TodoInput />
       <TodoList />
+      <div className="attribute"><p>Coded by Esra Discordia</p></div>
     </div>
   );
 };

@@ -4,9 +4,8 @@ import SunIcon from "../assets/icon-sun.svg";
 import MoonIcon from "../assets/icon-moon.svg";
 
 import { useDispatch } from "react-redux";
-import { changeTheme } from "../store/actions/themeActions";
-
 import { useSelector } from "react-redux";
+import { changeTheme } from "../store/actions/themeActions";
 
 const Header = () => {
   const dispatch = useDispatch();

@@ -16,9 +16,9 @@ const Footer = () => {
   return (
     <div className="todoFooter">
       <div className="itemsLeft">
-        <p>
+        <span>
           {unCompletedTodos(todos).length} {item} left
-        </p>
+        </span>
       </div>
       <FilterButtons />
       <ClearButton />
