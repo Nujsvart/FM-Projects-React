@@ -20,3 +20,9 @@ export const completeTodo = id => {
     payload: id,
   };
 };
+
+export const clearCompletedTodos = () => {
+  return {
+    type: actionTypes.CLEAR_COMPLETED_TODOS,
+  };
+};

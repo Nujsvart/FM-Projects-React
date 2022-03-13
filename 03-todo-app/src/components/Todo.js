@@ -2,15 +2,18 @@ import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { completeTodo, removeTodo } from "../store/actions/todoActions";
+import { showFilteredTodos } from "../store/reducers/filterReducer";
 
 const Todo = () => {
   const todos = useSelector(state => state.todos);
+  const activeFilter = useSelector(state => state.filtered);
   const dispatch = useDispatch();
-  console.log(todos);
+
+  const filteredTodos = showFilteredTodos(todos, activeFilter);
 
   return (
     <ul>
-      {todos.map(item => {
+      {filteredTodos.map(item => {
         return (
           <li
             className={`todo ${item.completed && "completedTodo"}`}
