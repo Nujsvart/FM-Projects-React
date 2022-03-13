@@ -8,12 +8,6 @@
 }
 
 body {
-  background-image: url("../assets/bg-desktop-dark.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: hsl(235, 21%, 11%);
-  display: grid;
-  place-items: center;
   font-size: 18px;
   font-weight: 400;
 }
@@ -47,11 +41,20 @@ h1 {
 }
 
 .app {
-  width: 30rem;
+  background-image: url("../assets/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsl(235, 21%, 11%);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
-  margin: 4rem 0;
+  width: 35rem;
+  margin-top: 5rem;
 }
 
 .titleContainer {
@@ -65,8 +68,10 @@ h1 {
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   background-color: hsl(235, 24%, 19%);
+  width: 35rem;
+  box-shadow: rgba(33, 34, 34, 0.034) 0px 8px 24px;
 }
 
 .todoInput button {
@@ -76,6 +81,8 @@ h1 {
 .todoContainer {
   border-radius: 3px;
   background-color: hsl(235, 24%, 19%);
+  width: 35rem;
+  box-shadow: rgba(33, 34, 34, 0.034) 0px 8px 24px;
 }
 
 .todo {
@@ -132,4 +139,35 @@ h1 {
 
 .completedIcon {
   background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+/* LIGHT */
+
+.app.light {
+  background-color: hsl(236, 33%, 92%);
+}
+
+.app.light .todoContainer {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.app.light .todo {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  color: hsl(235, 19%, 35%);
+}
+
+.app.light .checkBtn {
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
+.app.light .completedTodo {
+  color: hsl(233, 11%, 84%);
+}
+
+.app.light .todoInput {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.app.light input {
+  color: hsl(235, 19%, 35%);
 }
