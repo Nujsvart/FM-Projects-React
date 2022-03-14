@@ -144,16 +144,31 @@ p {
 
 .deleteBtn {
   margin-left: auto;
+  visibility: hidden;
+}
+
+.todo:hover .deleteBtn {
+  visibility: visible;
 }
 
 .completedIcon {
   background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
-.attribute {
-  color: white;
+.attribution {
+  color: hsl(234, 11%, 52%);
   margin-top: 7rem;
   margin-bottom: 1rem;
+  font-size: 12px;
+}
+
+.attribution a {
+  color: #ffd460;
+  text-decoration: none;
+}
+
+.app.light .attribution a {
+  color: #48466d;
 }
 
 /* LIGHT */

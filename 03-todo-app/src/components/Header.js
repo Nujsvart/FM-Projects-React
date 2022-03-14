@@ -11,7 +11,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const theme = useSelector(state => state.theme);
 
-  console.log(theme);
   return (
     <div className="header">
       <div className="titleContainer">

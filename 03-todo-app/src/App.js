@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+import Attribution from "./components/Attribution";
 
 import { useSelector } from "react-redux";
 
@@ -15,7 +16,7 @@ const App = () => {
       <Header />
       <TodoInput />
       <TodoList />
-      <div className="attribute"><p>Coded by Esra Discordia</p></div>
+      <Attribution />
     </div>
   );
 };
