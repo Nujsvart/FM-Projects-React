@@ -13,4 +13,20 @@ const validations = yup.object().shape({
     .required("Password cannot be empty"),
 });
 
+export const placeHolder = item => {
+  switch (item) {
+    case "firstName":
+      return "First Name";
+    case "lastName":
+      return "Last Name";
+    case "email":
+      return "Email Address";
+    case "password":
+      return "Password";
+
+    default:
+      return "";
+  }
+};
+
 export default validations;

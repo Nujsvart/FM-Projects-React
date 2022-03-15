@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import FormFooter from "./FormFooter";
 
 import { useFormik } from "formik";
-import validations from "../validations";
+import validations, { placeHolder } from "../validations";
 
 const FormField = () => {
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
@@ -14,29 +14,14 @@ const FormField = () => {
         password: "",
       },
 
-      onSubmit: values => {
+      onSubmit: (values, { resetForm }) => {
         console.log(values);
+        resetForm();
       },
       validationSchema: validations,
     });
 
-  const fields = ["firstName", "lastName", "email", "password"];
-
-  const placeHolder = item => {
-    switch (item) {
-      case "firstName":
-        return "First Name";
-      case "lastName":
-        return "Last Name";
-      case "email":
-        return "Email Address";
-      case "password":
-        return "Password";
-
-      default:
-        return "";
-    }
-  };
+  const fields = Object.keys(values);
 
   return (
     <div className="form">
