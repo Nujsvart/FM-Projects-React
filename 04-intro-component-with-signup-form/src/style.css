@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    opacity: .8;
+  opacity: 0.8;
 }
 
 h1 {
@@ -50,6 +50,7 @@ h1 {
   font-size: 2.3rem;
   letter-spacing: 0.8px;
   margin-bottom: 1.4rem;
+  width: 80%;
 }
 
 body {
@@ -75,7 +76,6 @@ body {
 
 .formContainer {
   flex-basis: 50%;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +88,7 @@ body {
   padding: 1rem;
   background-color: var(--text);
   width: 100%;
+  max-width: 600px;
   border-radius: 6px;
 }
 
@@ -95,6 +96,7 @@ body {
   color: var(--text);
   background-color: var(--blue);
   width: 100%;
+  max-width: 600px;
   padding: 1rem 0;
   margin-bottom: 1rem;
   border-radius: 6px;
@@ -116,4 +118,25 @@ body {
 .redText {
   color: var(--red);
   font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .App {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  h1 {
+    width: initial;
+  }
+
+  .main {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .formHeader {
+    padding: 1rem 5rem;
+  }
 }
