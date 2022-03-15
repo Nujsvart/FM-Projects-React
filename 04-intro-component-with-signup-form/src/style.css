@@ -120,6 +120,15 @@ body {
   font-weight: 600;
 }
 
+.errors {
+  height: 1rem;
+  color: red;
+  font-size: 11px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 700px) {
   .App {
     flex-direction: column;

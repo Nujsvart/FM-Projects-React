@@ -1,52 +1,60 @@
-import React from "react";
+import React, { Fragment } from "react";
 import FormFooter from "./FormFooter";
 
 import { useFormik } from "formik";
+import validations from "../validations";
 
 const FormField = () => {
-  const { handleSubmit, handleChange, values } = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    },
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
+    useFormik({
+      initialValues: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      },
 
-    onSubmit: values => {
-      console.log(values);
-    },
-  });
+      onSubmit: values => {
+        console.log(values);
+      },
+      validationSchema: validations,
+    });
+
+  const fields = ["firstName", "lastName", "email", "password"];
+
+  const placeHolder = item => {
+    switch (item) {
+      case "firstName":
+        return "First Name";
+      case "lastName":
+        return "Last Name";
+      case "email":
+        return "Email Address";
+      case "password":
+        return "Password";
+
+      default:
+        return "";
+    }
+  };
 
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <input
-          name="firstName"
-          placeholder="First Name"
-          onChange={handleChange}
-          value={values.firstName}
-        />
-        <input
-          name="lastName"
-          placeholder="Last Name"
-          onChange={handleChange}
-          value={values.lastName}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Adress"
-          onChange={handleChange}
-          value={values.email}
-        />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          onChange={handleChange}
-          value={values.password}
-        />
+        {fields.map((field, i) => (
+          <Fragment key={i}>
+            <input
+              name={field}
+              placeholder={placeHolder(field)}
+              value={values[field]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <div className="errors">
+              {errors[field] && touched[field] && <p>{errors[field]}</p>}
+            </div>
+          </Fragment>
+        ))}
 
         <button type="submit">Claim Your Free Trial</button>
       </form>
