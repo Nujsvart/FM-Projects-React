@@ -7,10 +7,7 @@ const validations = yup.object().shape({
     .string()
     .email("Looks like this is not an email")
     .required("Email cannot be empty"),
-  password: yup
-    .string()
-    .min(6, "En az 6 karakter olmalidir")
-    .required("Password cannot be empty"),
+  password: yup.string().min(6).required("Password cannot be empty"),
 });
 
 export const placeHolder = item => {

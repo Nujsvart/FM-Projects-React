@@ -29,11 +29,13 @@ const FormField = () => {
         {fields.map((field, i) => (
           <Fragment key={i}>
             <input
+              key={i}
               name={field}
               placeholder={placeHolder(field)}
               value={values[field]}
               onChange={handleChange}
               onBlur={handleBlur}
+              className={`fields ${errors[field] && touched[field] && "err"}`}
             />
             <div className="errors">
               {errors[field] && touched[field] && <p>{errors[field]}</p>}
